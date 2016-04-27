@@ -1,4 +1,3 @@
-const request = require('request');
 const pdf = require('html-pdf');
 
 const invoiceReq = (renderer) => {

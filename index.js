@@ -12,8 +12,11 @@ const renderer = nunjucks.configure('templates', {
 });
 
 const invoiceReq = require('./handlers/invoice.js')(renderer);
+const statusReq = require('./handlers/status.js')();
 
-app.get('/api/invoice', bodyParser.json(), invoiceReq.get);
+
+app.post('/v1/invoice', bodyParser.json(), invoiceReq.get);
+app.get('/status', statusReq.get);
 
 app.listen(process.env.PORT, () => {
     console.log('Started on port ' + process.env.PORT);
