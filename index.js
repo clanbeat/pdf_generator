@@ -2,9 +2,11 @@ const express = require('express');
 const http = require('http');
 const fs = require('fs');
 const bodyParser = require('body-parser');
-
+const cors = require('cors');
 const nunjucks = require('nunjucks');
+
 const app = express();
+app.use(cors());
 
 const renderer = nunjucks.configure('templates', {
     autoescape: true,
