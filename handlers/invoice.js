@@ -17,6 +17,7 @@ const invoiceReq = (renderer) => {
   };
   const getFn = (req, res) => {
     if(!req.body) return res.status(500).json({error_message: 'problem parsing json body'});
+    console.log("REQUESt BODY;",req.body)
     var renderedHtml = renderer.render('invoice.tmpl.html', req.body);
     pdf.create(renderedHtml, invoice_options).toStream(function(err, stream){
         stream.pipe(res);
