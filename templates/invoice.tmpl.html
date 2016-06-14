@@ -17,9 +17,6 @@
         .logo {
             margin-bottom: 0px;
         }
-        .logo {
-            width: 50px;
-        }
         h1 {
           margin-top: 0px;
         }
@@ -29,13 +26,7 @@
         table {
           width: 12cm;
         }
-        table tr td:last-child {
-            font-weight: bold;
-        }
-        table td{
-          border-bottom: 1px solid #C1CED9;
-          border-collapse: collapse;
-        }
+
         table tr {
           line-height: 28px;
         }
@@ -43,31 +34,58 @@
 </head>
 <body>
 <header>
-  <img class="logo" src="https://clanbeat.com/assets/images/clanbeat_icon.png" />
+  <img class="logo"  height="50px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-general-images/square.png" />
   <h1>Receipt</h1>
 </header>
 
-<p>
-  We received payment for your Clanbeat subscription.Thanks for your business! <br />
-  Questions? Contact us anytime at support@clanbeat.com
-</p>
+
 <table>
   <tr>
-    <td>Date</td>
+    <td>Invoice ID:</td>
+    <td>{{invoiceId}}</td>
+  </tr>
+  <tr>
+    <td>Date:</td>
     <td>{{paidAt}}</td>
   </tr>
   <tr>
-    <td>Item</td>
-    <td>Clanbeat subscription for {{quantity}} users</td>
+    <td>Clan name:</td>
+    <td>{{clanName}}</td>
   </tr>
   <tr>
-    <td>Amount</td>
-    <td>USD ${{totalAmount}}</td>
-  </tr>
-  <tr>
-    <td>For service through</td>
-    <td>{{periodEnd}}</td>
+    <td style="vertical-align:top;">Billed to:</td>
+    <td>{{cardNumber}}<br />{{billingAddress}} <br />{{billingInfo}}</td>
   </tr>
 </table>
+
+<div style="margin-bottom:10px;line-height:14px;margin-top:10px;">
+New charges for upcoming month <br />
+Period {{periodStart}} - {{periodEnd}}
+</div>
+<table style="border: 1px solid black;padding:20px;text-align:left;vertica-align:top;">
+  <thead>
+    <tr>
+      <th>Users</th>
+      <th>Cost</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{quantity}}</td>
+      <td>5 USD per user</td>
+      <td>USD ${{totalAmount}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td style="font-weight:bold;">Total to be charged:</td>
+      <td style="font-weight:bold;">USD ${{totalAmount}}</td>
+    </tr>
+  </tbody>
+</table>
+<div style="font-size:8px;text-align:right;margin-top:10px;">*EU Customers: Prices inclusive of VAT, where applicable</div>
+<p style="font-size:8px;margin-top:30px;text-align:center;">
+  If you have any questions regarding billing, please contact us: hello@clanbeat.com
+</p>
 </body>
 </html>

@@ -12,7 +12,16 @@ const invoiceReq = (renderer) => {
     },
     "footer": {
       "height": "28mm",
-      "contents": '<span style="color: #444;">Clanbeat<br />support@clanbeat.com</span>'
+      "contents": '<div style="color: #444;"">
+          <div style="loat:left;text-align:left;">
+          Clanbeat Inc <br />
+          548 Market st. 63570 <br />
+          San Fransisco, Ca 94104 <br />
+          </div>
+          <div style="float:right;text-align:right;">
+          www.clanbeat.com
+          </div>
+        </div>'
     },
   };
   const getFn = (req, res) => {
