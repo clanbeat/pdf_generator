@@ -71,18 +71,18 @@ Period {{periodStart}} - {{periodEnd}}
       {% for item in items  %}
       <tr>
         <td colspan="2" >{{ item.description }}</td>
-        <td>{{ item.totalAmount }}</td>
+        <td>{{ item.amountInDollars }}</td>
       </tr>
       {% endfor %}
       <tr>
         <td></td>
         <td>Total</td>
-        <td>${{ totalAmount }}</td>
+        <td>${{ itemsTotal }}</td>
       </tr>
       <tr>
         <td></td>
         <td>Paid</td>
-        <td>${{ totalAmount }}</td>
+        <td>${{ itemsTotal }}</td>
       </tr>
     </tbody>
   </table>
