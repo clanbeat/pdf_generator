@@ -70,7 +70,13 @@ Period {{periodStart}} - {{periodEnd}}
     <tbody>
       {% for item in items  %}
       <tr>
-        <td colspan="2" >{{ item.description }}</td>
+        <td colspan="2" >
+          {% if item.description %}
+            {{ item.description }}
+          {% else %}
+            {{ item.quantity }} x Subscription to Clanbeat Pro
+          {% endif %}
+        </td>
         <td>{{ item.totalAmount }}</td>
       </tr>
       {% endfor %}
