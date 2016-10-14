@@ -70,8 +70,8 @@ Period {{periodStart}} - {{periodEnd}}
     <tbody>
       {% for item in items  %}
       <tr>
-        <td colspan="2" style="font-weight:bold;">{{ item.description }}</td>
-        <td style="font-weight:bold;">{{ item.amount }}</td>
+        <td colspan="2" >{{ item.description }}</td>
+        <td>{{ item.totalAmount }}</td>
       </tr>
       {% endfor %}
       <tr>
